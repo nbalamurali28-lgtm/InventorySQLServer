@@ -119,19 +119,19 @@
                             <asp:GridView ID="gvTasks" runat="server" 
                                 CssClass="table table-striped table-bordered table-hover"
                                 AutoGenerateColumns="False"
-                                OnRowCommand="gvTasks_RowCommand"
+                                OnRowCommand="gvTasks_RowCommand" OnRowEditing="gvTasks_RowEditing"
                                 EmptyDataText="No active tasks found. All tasks are completed! Create a new task above or mark completed tasks as incomplete.">
                                 <Columns>
-                                    <asp:BoundField DataField="task_id" HeaderText="Task ID" ItemStyle-Width="80px" />
-                                    <asp:BoundField DataField="title" HeaderText="Title" ItemStyle-Width="200px" />
-                                    <asp:BoundField DataField="description" HeaderText="Description" />
+                                    <asp:BoundField DataField="task_id" HeaderText="Task ID" ItemStyle-Width="80px" ReadOnly="true"/>
+                                    <asp:BoundField DataField="title" HeaderText="Title" ItemStyle-Width="200px" ReadOnly="true"/>
+                                    <asp:BoundField DataField="description" HeaderText="Description"  ReadOnly="true"/>
                                     <asp:TemplateField HeaderText="End Date" ItemStyle-Width="120px">
                                         <ItemTemplate>
                                             <%# Eval("end_date") != DBNull.Value ? 
                                                 Convert.ToDateTime(Eval("end_date")).ToString("MMM dd, yyyy") : 
                                                 "No due date" %>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>    
                                     <asp:TemplateField HeaderText="Created At" ItemStyle-Width="150px">
                                         <ItemTemplate>
                                             <%# Eval("created_at", "{0:MMM dd, yyyy HH:mm}") %>

@@ -177,5 +177,12 @@ namespace InventoryManagement
             lblMessage.CssClass = $"alert alert-{alertType} mt-3";
             lblMessage.Style["display"] = "block";
         }
+
+        protected void gvTasks_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvTasks.EditIndex = e.NewEditIndex;
+
+            BindTasks(); // Rebind data
+        }
     }
 }
