@@ -184,5 +184,12 @@ namespace InventoryManagement
 
             BindTasks(); // Rebind data
         }
+
+        protected void gvTasks_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            gvTasks.EditIndex = e.RowIndex;
+
+            BindTasks(); // Rebind data
+        }
     }
 }

@@ -119,7 +119,7 @@
                             <asp:GridView ID="gvTasks" runat="server" 
                                 CssClass="table table-striped table-bordered table-hover"
                                 AutoGenerateColumns="False"
-                                OnRowCommand="gvTasks_RowCommand" OnRowEditing="gvTasks_RowEditing"
+                                OnRowCommand="gvTasks_RowCommand" OnRowEditing="gvTasks_RowEditing" OnRowDeleting="gvTasks_RowDeleting"
                                 EmptyDataText="No active tasks found. All tasks are completed! Create a new task above or mark completed tasks as incomplete.">
                                 <Columns>
                                     <asp:BoundField DataField="task_id" HeaderText="Task ID" ItemStyle-Width="80px" ReadOnly="true"/>
