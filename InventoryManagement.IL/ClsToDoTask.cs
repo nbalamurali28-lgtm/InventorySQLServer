@@ -145,7 +145,7 @@ namespace InventoryManagement.IL
                 objUtility.BeginTransaction();
 
                 sqlQueryBuilder = new StringBuilder();
-                sqlQueryBuilder.Append("UPDATE todo_tasks SET completed = NOT completed WHERE task_id = @task_id");
+                sqlQueryBuilder.Append("UPDATE todo_tasks SET completed = 1 WHERE task_id = @task_id");
 
                 objUtility.sqlCommand.CommandText = sqlQueryBuilder.ToString();
                 objUtility.sqlCommand.Parameters.AddWithValue("@task_id", taskId);
